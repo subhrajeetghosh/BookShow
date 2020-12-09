@@ -15,13 +15,16 @@ import javax.persistence.*;
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  int id;
+    private  int Id;
 
+    @Column(name = "Name")
     private String name;
+
+    @Column(name = "Author")
     private String author;
 
-    public Book(int id, String name, String author) {
-        this.id = id;
+    public Book(int Id, String name, String author) {
+        this.Id = Id;
         this.name = name;
         this.author = author;
     }
@@ -31,11 +34,11 @@ public class Book {
     }
 
     public int getId() {
-        return id;
+        return Id;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.Id = id;
     }
 
     public String getName() {
