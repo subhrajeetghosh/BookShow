@@ -1,3 +1,4 @@
+
 package com.example.springbootapp.Entity;
 
 import lombok.AllArgsConstructor;
@@ -15,10 +16,15 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int id;
-    @Column(name = "Name")
+
     private String name;
-    @Column(name = "Author")
     private String author;
+
+    public Book(int id, String name, String author) {
+        this.id = id;
+        this.name = name;
+        this.author = author;
+    }
 
     public Book() {
         super();
@@ -45,12 +51,6 @@ public class Book {
     }
 
     public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public Book(int id, String name, String author) {
-        this.id = id;
-        this.name = name;
         this.author = author;
     }
 }
